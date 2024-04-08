@@ -35,4 +35,5 @@ keymap.set("n", "<leader>s/", "<cmd>horizontal resize +15<CR>")
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- we have telescope fuzzy find in current buffer on / so we're remapping normal search
 keymap.set("n", "<leader>/", "/")
