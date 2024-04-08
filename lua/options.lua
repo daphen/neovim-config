@@ -21,3 +21,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- Sync clipboard between OS and Neovim.
 vim.opt.clipboard = "unnamedplus"
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+vim.opt.termguicolors = true
+
+vim.opt.backspace = "indent,eol,start"

@@ -34,3 +34,5 @@ keymap.set("n", "<leader>s/", "<cmd>horizontal resize +15<CR>")
 -- move highlighted
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+keymap.set("n", "<leader>/", "/")

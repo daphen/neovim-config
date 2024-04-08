@@ -9,6 +9,10 @@ return {
 		{ "<leader>e", "<cmd>Neotree toggle position=float<cr>", desc = "Toggle NeoTree" },
 	},
 	config = function()
-		require("neo-tree").setup()
+		require("neo-tree").setup({
+			filesystem = {
+				follow_current_file = { enabled = true },
+			},
+		})
 	end,
 }
