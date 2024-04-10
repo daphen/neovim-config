@@ -37,3 +37,5 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- we have telescope fuzzy find in current buffer on / so we're remapping normal search
 keymap.set("n", "<leader>/", "/")
+
+keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
