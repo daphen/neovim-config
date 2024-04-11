@@ -45,7 +45,7 @@ return {
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find existing buffers" })
 			vim.keymap.set("n", "<leader><leader>", builtin.oldfiles, { desc = 'Find Recent Files ("." for repeat)' })
 			vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Goto References" })
-			vim.keymap.set("n", "/", function()
+			vim.keymap.set("n", "<leader>fw", function()
 				-- You can pass additional configuration to telescope to change theme, layout, etc.
 				require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 					winblend = 10,
