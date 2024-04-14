@@ -34,3 +34,7 @@ opt.backspace = "indent,eol,start"
 -- Move cursor to the perceived new split when opening it
 opt.splitright = true
 opt.splitbelow = true
+
+-- Set highlight on search, but clear on pressing <Esc> in normal mode
+vim.opt.hlsearch = true
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
