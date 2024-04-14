@@ -4,6 +4,8 @@ local opt = vim.opt
 opt.relativenumber = true
 opt.number = true
 
+opt.scrolloff = 8
+
 -- tabs & indent
 opt.tabstop = 2
 opt.shiftwidth = 2
@@ -20,11 +22,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- Sync clipboard between OS and Neovim.
-vim.opt.clipboard = "unnamedplus"
+opt.clipboard = "unnamedplus"
 
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+opt.ignorecase = true
+opt.smartcase = true
 
-vim.opt.termguicolors = true
+opt.termguicolors = true
 
-vim.opt.backspace = "indent,eol,start"
+opt.backspace = "indent,eol,start"
+
+-- Move cursor to the perceived new split when opening it
+opt.splitright = true
+opt.splitbelow = true
