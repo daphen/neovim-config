@@ -12,6 +12,12 @@ opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
 
+-- Sync clipboard between OS and Neovim.
+opt.clipboard = "unnamedplus"
+
+opt.ignorecase = true
+opt.smartcase = true
+
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
@@ -21,13 +27,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- Sync clipboard between OS and Neovim.
-opt.clipboard = "unnamedplus"
-
-opt.ignorecase = true
-opt.smartcase = true
-
+-- Color options
 opt.termguicolors = true
+opt.background = "dark"
+opt.fillchars = { eob = " " }
 
 opt.backspace = "indent,eol,start"
 
