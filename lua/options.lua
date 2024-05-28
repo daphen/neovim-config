@@ -11,6 +11,7 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
+opt.wrap = false
 
 -- Sync clipboard between OS and Neovim.
 opt.clipboard = "unnamedplus"

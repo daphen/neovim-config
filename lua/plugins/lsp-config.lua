@@ -29,6 +29,7 @@ return {
 					"graphql",
 					"pylsp",
 					"volar",
+					"glint",
 				},
 				-- auto-install configured servers (with lspconfig)
 				automatic_installation = true, -- not the same as ensure_installed
@@ -52,6 +53,7 @@ return {
 			-- html server
 			lspconfig["html"].setup({
 				capabilities = capabilities,
+				filetypes = { "hbs" },
 			})
 
 			-- typescript server
@@ -62,6 +64,12 @@ return {
 			-- css server
 			lspconfig["cssls"].setup({
 				capabilities = capabilities,
+				css = {
+					validate = true,
+					lint = {
+						unknownAtRules = "ignore",
+					},
+				},
 			})
 
 			-- vue server
@@ -97,6 +105,10 @@ return {
 					"less",
 					"svelte",
 				},
+			})
+
+			lspconfig["glint"].setup({
+				capabilities = capabilities,
 			})
 
 			-- lua server

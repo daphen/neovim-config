@@ -2,7 +2,7 @@ return {
 	"voldikss/vim-floaterm",
 	config = function()
 		vim.keymap.set(
-			{ "n", "t" },
+			{ "n" },
 			"<leader>tn",
 			"<C-\\><C-n><CMD>FloatermNew<CR>",
 			{ desc = "Create New terminal Window" }
@@ -23,7 +23,6 @@ return {
 		)
 
 		vim.keymap.set({ "t" }, "<C-d>", "<C-\\><C-n><CMD>FloatermNext<CR>", { desc = "Next terminal Window" })
-
 		vim.keymap.set({ "t" }, "<C-a>", "<C-\\><C-n><CMD>FloatermPrev<CR>", { desc = "Prev terminal Window" })
 	end,
 }
