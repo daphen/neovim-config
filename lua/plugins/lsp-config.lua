@@ -64,10 +64,12 @@ return {
 			-- css server
 			lspconfig["cssls"].setup({
 				capabilities = capabilities,
-				css = {
-					validate = true,
-					lint = {
-						unknownAtRules = "ignore",
+				validate = true,
+				settings = {
+					css = {
+						lint = {
+							unknownAtRules = "ignore",
+						},
 					},
 				},
 			})
