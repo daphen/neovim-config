@@ -30,6 +30,7 @@ return {
 					"pylsp",
 					"volar",
 					"glint",
+					"biome",
 				},
 				-- auto-install configured servers (with lspconfig)
 				automatic_installation = true, -- not the same as ensure_installed
