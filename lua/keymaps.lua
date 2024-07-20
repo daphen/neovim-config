@@ -26,8 +26,8 @@ keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
 -- resize splits
-keymap.set("n", "<leader>s'", "<cmd>vertical resize +15<CR>")
-keymap.set("n", "<leader>s;", "<cmd>vertical resize -15<CR>")
+keymap.set("n", "<leader>[", "<cmd>vertical resize +15<CR>")
+keymap.set("n", "<leader>]", "<cmd>vertical resize -15<CR>")
 keymap.set("n", "<leader>s[", "<cmd>horizontal resize -15<CR>")
 keymap.set("n", "<leader>s/", "<cmd>horizontal resize +15<CR>")
 

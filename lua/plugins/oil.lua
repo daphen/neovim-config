@@ -5,9 +5,8 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		require("oil").setup({
-			view_options = { show_hidden = true },
+			show_hidden = true,
 		})
-
-		vim.keymap.set("n", "<leader>o", require("oil").toggle_float)
+		vim.keymap.set("n", "<leader>o", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 	end,
 }

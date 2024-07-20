@@ -144,7 +144,7 @@ return {
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_next, { desc = "Go to next diagnostics" })
-			vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, { desc = "Go to next diagnostics" })
+			vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, { desc = "Go to prev diagnostics" })
 		end,
 	},
 }
