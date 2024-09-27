@@ -5,7 +5,7 @@ return {
 			---Render style
 			---@usage 'background'|'foreground'|'virtual'
 			render = "virtual",
-			-- virtual_symbol = "■",
+			virtual_symbol = "●",
 			enable_named_colors = true,
 			enable_hsl = true,
 			enable_short_hex = true,

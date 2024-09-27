@@ -3,22 +3,23 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local conform = require("conform")
+		local utils = require("utils")
 
 		conform.setup({
 			formatters_by_ft = {
-				javascript = { "biome" },
-				typescript = { "biome" },
-				javascriptreact = { "biome" },
-				typescriptreact = { "biome" },
-				svelte = { "biome" },
-				vue = { "biome" },
+				javascript = { "prettier" },
+				typescript = { "prettier" },
+				javascriptreact = { "prettier" },
+				typescriptreact = { "prettier" },
+				svelte = { "prettier" },
+				vue = { "prettier" },
 				css = { "prettier" },
-				html = { "biome" },
-				less = { "biome" },
-				scss = { "biome" },
-				markdown = { "biome" },
-				json = { "biome" },
-				yaml = { "biome" },
+				html = { "prettier" },
+				less = { "prettier" },
+				scss = { "prettier" },
+				markdown = { "prettier" },
+				json = { "prettier" },
+				yaml = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
 			},
@@ -26,6 +27,15 @@ return {
 				lsp_fallback = false,
 				async = false,
 				timeout = 500,
+			},
+			formatters = {
+				prettier = {
+					condition = function()
+						local root_markers = { ".git" }
+						local target_files = { ".prettierrc", ".prettierrc.json", "prettier.config.mjs" }
+						return utils.root_has_file(utils.current_path(), root_markers, target_files)
+					end,
+				},
 			},
 		})
 

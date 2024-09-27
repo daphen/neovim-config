@@ -17,6 +17,15 @@ return {
 						enabled = true,
 						leave_dirs_open = true,
 					},
+					filtered_items = {
+						visible = true,
+						hide_dotfiles = false,
+						hide_gitignored = true,
+						never_show = {
+							".DS_Store",
+							"thumbs.db",
+						},
+					},
 				},
 				buffers = {
 					follow_current_file = {

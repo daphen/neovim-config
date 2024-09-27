@@ -19,7 +19,7 @@ return {
 			require("mason-lspconfig").setup({
 				-- list of servers for mason to install
 				ensure_installed = {
-					"tsserver",
+					"ts_ls",
 					"html",
 					"cssls",
 					"tailwindcss",
@@ -30,7 +30,6 @@ return {
 					"pylsp",
 					"volar",
 					"glint",
-					"biome",
 				},
 				-- auto-install configured servers (with lspconfig)
 				automatic_installation = true, -- not the same as ensure_installed
@@ -49,22 +48,42 @@ return {
 			local cmp_nvim_lsp = require("cmp_nvim_lsp")
 			local capabilities = cmp_nvim_lsp.default_capabilities()
 
+			-- /* ---------------------------------------border stuff--------------------------------------- */
+
+			local border = "single"
+			local lspconfigWindows = require("lspconfig.ui.windows")
+
+			local on_attach = function(client, bufnr)
+				vim.diagnostic.config({
+					float = { border = border },
+				})
+
+				lspconfigWindows.default_options = {
+					border = border,
+				}
+			end
+
+			-- /* ---------------------------------------/border stuff--------------------------------------- */
+
 			-- Setup LSP servers
 
 			-- html server
 			lspconfig["html"].setup({
 				capabilities = capabilities,
+				on_attach = on_attach,
 				filetypes = { "hbs" },
 			})
 
 			-- typescript server
-			lspconfig["tsserver"].setup({
+			lspconfig["ts_ls"].setup({
 				capabilities = capabilities,
+				on_attach = on_attach,
 			})
 
 			-- css server
 			lspconfig["cssls"].setup({
 				capabilities = capabilities,
+				on_attach = on_attach,
 				validate = true,
 				settings = {
 					css = {
@@ -78,26 +97,41 @@ return {
 			-- vue server
 			lspconfig["volar"].setup({
 				capabilities = capabilities,
+				on_attach = on_attach,
 			})
 
 			-- tailwindcss server
 			lspconfig["tailwindcss"].setup({
 				capabilities = capabilities,
+				on_attach = on_attach,
+				settings = {
+					tailwindCSS = {
+						experimental = {
+							classRegex = {
+								{ "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+								{ "cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
+							},
+						},
+					},
+				},
 			})
 
 			-- python server
 			lspconfig["pylsp"].setup({
 				capabilities = capabilities,
+				on_attach = on_attach,
 			})
 
 			-- svelte server
 			lspconfig["svelte"].setup({
 				capabilities = capabilities,
+				on_attach = on_attach,
 			})
 
 			-- emmet language server
 			lspconfig["emmet_ls"].setup({
 				capabilities = capabilities,
+				on_attach = on_attach,
 				filetypes = {
 					"html",
 					"typescriptreact",
@@ -112,11 +146,13 @@ return {
 
 			lspconfig["glint"].setup({
 				capabilities = capabilities,
+				on_attach = on_attach,
 			})
 
 			-- lua server
 			lspconfig["lua_ls"].setup({
 				capabilities = capabilities,
+				on_attach = on_attach,
 				settings = {
 					Lua = {
 						telemetry = { enable = false },
